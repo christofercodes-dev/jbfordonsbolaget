@@ -40,6 +40,8 @@ body {
 
 html {
   scroll-behavior: smooth;
+  scroll-restoration: auto;
+
 }
 
 /* TVINGA NAVBAREN ATT ALLTID VARA KLICKBAR */
