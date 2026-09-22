@@ -926,9 +926,9 @@
     background:
       linear-gradient(
         180deg,
-        rgba(11, 13, 23, 0.4) 0%,
-        rgba(11, 13, 23, 0.7) 50%,
-        rgba(11, 13, 23, 0.4) 100%
+        rgba(11, 13, 23, 0.3) 0%,
+        rgba(11, 13, 23, 0.45) 50%,
+        rgba(11, 13, 23, 0.3) 100%
       ),
       url("/images/volvo-bg.png")
         72% center / cover no-repeat;
