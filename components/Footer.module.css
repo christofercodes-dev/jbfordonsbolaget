@@ -1,0 +1,306 @@
+.footer {
+    background: #0b0d17;
+    color: #ffffff;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* =========================================
+     CTA
+  ========================================= */
+  
+  .cta {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 3rem;
+  
+    padding: 5.5rem 0 5rem;
+  
+    border-bottom: 1px solid #282b36;
+  }
+  
+  .label {
+    display: block;
+  
+    margin-bottom: 1.5rem;
+  
+    color: #858995;
+  
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+  }
+  
+  .cta h2 {
+    margin: 0;
+  
+    font-size: clamp(3.5rem, 6vw, 6.5rem);
+    line-height: 0.9;
+    letter-spacing: -0.06em;
+    font-weight: 500;
+  }
+  
+  .cta h2 em {
+    color: #858995;
+    font-style: normal;
+  }
+  
+  .ctaButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  
+    min-width: 165px;
+  
+    padding: 1rem 1.15rem;
+  
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50px;
+    color: #ffffff;
+    text-decoration: none;
+  
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  
+    transition:
+      background-color 0.25s ease,
+      color 0.25s ease,
+      border-color 0.25s ease,
+      gap 0.25s ease;
+  }
+  
+  .ctaButton:hover {
+    gap: 2.4rem;
+  
+    background: #ffffff;
+    border-color: #ffffff;
+  
+    color: #0b0d17;
+  }
+  
+  /* =========================================
+     MIDDLE
+  ========================================= */
+  
+  .middle {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 5rem;
+  
+    padding: 4rem 0;
+  }
+  
+  .brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+  
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .logoMark {
+    width: 30px;
+    height: 30px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    border: 1px solid #5e616b;
+  
+    color: #ffffff;
+  
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  
+  .logoText {
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+  
+  .logoText span {
+    color: #858995;
+  }
+  
+  .brand p {
+    margin: 1.5rem 0 0;
+  
+    color: #858995;
+  
+    font-size: 0.78rem;
+    line-height: 1.6;
+  }
+  
+  /* =========================================
+     COLUMNS
+  ========================================= */
+  
+  .columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  .column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.65rem;
+  }
+  
+  .columnTitle {
+    margin-bottom: 0.65rem;
+  
+    color: #555964;
+  
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+  }
+  
+  .column a,
+  .column span:not(.columnTitle) {
+    color: #a1a4ad;
+  
+    font-size: 0.75rem;
+    line-height: 1.5;
+  
+    text-decoration: none;
+  
+    transition: color 0.2s ease;
+  }
+  
+  .column a:hover {
+    color: #ffffff;
+  }
+  
+  /* =========================================
+     BOTTOM
+  ========================================= */
+  
+  .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  
+    padding: 1.5rem 0;
+  
+    border-top: 1px solid #282b36;
+  
+    color: #555964;
+  
+    font-size: 0.6rem;
+  }
+  
+  .bottomLinks {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .bottomLinks a {
+    color: #555964;
+    text-decoration: none;
+  
+    transition: color 0.2s ease;
+  }
+  
+  .bottomLinks a:hover {
+    color: #a1a4ad;
+  }
+  
+  /* =========================================
+     TABLET
+  ========================================= */
+  
+  @media (max-width: 850px) {
+    .container {
+      padding: 0 1.5rem;
+    }
+  
+    .cta {
+      padding: 4.5rem 0 4rem;
+    }
+  
+    .middle {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+  
+  /* =========================================
+     MOBILE
+  ========================================= */
+  
+  @media (max-width: 600px) {
+    .container {
+      padding: 0 1.25rem;
+    }
+  
+    .cta {
+      display: block;
+      padding: 4rem 0 3.5rem;
+    }
+  
+    .cta h2 {
+      font-size: clamp(3.2rem, 14vw, 5rem);
+    }
+  
+    .ctaButton {
+      margin-top: 2rem;
+    }
+  
+    .middle {
+      padding: 3rem 0;
+      gap: 3rem;
+    }
+  
+    .columns {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 2.5rem;
+    }
+  
+    .bottom {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 0.8rem;
+  
+      padding: 1.5rem 0;
+    }
+  
+    .bottomLinks {
+      order: 3;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .columns {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .ctaButton,
+    .column a,
+    .bottomLinks a {
+      transition: none;
+    }
+  }

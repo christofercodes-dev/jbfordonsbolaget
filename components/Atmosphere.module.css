@@ -1,0 +1,146 @@
+/* src/components/Atmosphere.module.css */
+
+.section {
+    position: relative;
+    height: 100vh; /* Tar upp hela skärmen för maximal effekt */
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.imageWrapper {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 60%; /* Bilden tar upp mer än halva skärmen */
+    height: 100%;
+    z-index: 1;
+}
+
+.imageWrapper::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* En mjuk toning som gör att bilden smälter in i den svarta bakgrunden till vänster */
+    background: linear-gradient(to right, #000000 0%, transparent 40%);
+    z-index: 2;
+}
+
+.bgImage {
+    object-fit: cover;
+    filter: grayscale(30%) brightness(0.7);
+}
+
+.content {
+    position: relative;
+    z-index: 10;
+    padding-left: 10%;
+    max-width: 50%;
+}
+
+.label {
+    font-family: var(--font-inter);
+    font-size: 0.7rem;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 20px;
+    display: block;
+}
+
+.title {
+    font-family: var(--font-playfair);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 40px;
+}
+
+.title span {
+    display: block;
+    font-style: italic;
+    opacity: 0.6;
+}
+
+.description {
+    font-family: var(--font-inter);
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.8;
+    font-weight: 300;
+    max-width: 400px;
+}
+
+/* --- RESPONSIVITET --- */
+
+@media (max-width: 1024px) {
+    .imageWrapper {
+        width: 100%;
+        opacity: 0.5;
+    }
+
+    /* Justera toningen för att täcka hela bilden när den ligger bakom texten */
+    .imageWrapper::before {
+        background: linear-gradient(to top, #000 20%, rgba(0,0,0,0.4) 100%);
+    }
+
+    .content {
+        max-width: 80%;
+        padding-left: 0;
+        margin: 0 auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .description {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        height: auto;
+        padding: 120px 0; /* Ger luft på mobilen istället för låst höjd */
+        justify-content: center;
+    }
+
+    .imageWrapper {
+        opacity: 0.4;
+    }
+
+    .imageWrapper::before {
+        /* Radiell gradient för maximal text-läsbarhet i mitten */
+        background: radial-gradient(circle, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 100%);
+    }
+
+    .content {
+        max-width: 90%;
+        padding: 0 5%;
+    }
+
+    .label {
+        font-size: 0.6rem;
+        letter-spacing: 0.4em;
+    }
+
+    .title {
+        font-size: 2.2rem;
+        margin-bottom: 25px;
+    }
+
+    .description {
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    .bgImage {
+        /* Prova att ändra procenten här (0% = vänster, 100% = höger) 
+           för att hitta var din bil ser bäst ut */
+        object-position: 70% center; 
+        filter: brightness(0.5); /* Gör bilden mörkare på mobil för att texten ska poppa */
+    }
+}

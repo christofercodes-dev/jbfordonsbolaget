@@ -1,0 +1,135 @@
+/* src/components/Process.module.css */
+
+.section {
+    padding: 120px 40px;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.header {
+    margin-bottom: 80px;
+    text-align: left; /* Mercedes kör ofta vänsterställt för en modern look */
+}
+
+.label {
+    font-family: var(--font-inter);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.9);
+    display: block;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-family: var(--font-playfair);
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: #1a1a1a;
+    line-height: 1.2;
+    max-width: 600px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+}
+
+.step {
+    position: relative;
+}
+
+.number {
+    font-family: var(--font-inter);
+    font-size: 0.7rem;
+    color: #1a1a1a;
+    opacity: 0.3;
+    display: block;
+    margin-bottom: 25px;
+}
+
+.stepTitle {
+    font-family: var(--font-playfair);
+    font-size: 1.5rem;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.text {
+    font-family: var(--font-inter);
+    font-size: 0.95rem;
+    color: rgba(26, 26, 26, 0.6);
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+/* --- RESPONSIVITET --- */
+
+@media (max-width: 1024px) {
+    .grid {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 80px 10%;
+    }
+
+    .header {
+        text-align: center; /* Centrerar rubriken på mobil */
+        margin-bottom: 60px;
+    }
+
+    .title {
+        margin: 0 auto; /* Centrerar rubriken horisontellt */
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .step {
+        text-align: center; /* Centrerar texten i varje steg */
+        border-top: none; /* Tar bort linjen på mobil för en renare look */
+        padding-top: 0;
+    }
+
+    /* Lägg till en liten blå prick istället för linje för att separera stegen på mobil */
+    .step::after {
+        content: '';
+        display: block;
+        width: 4px;
+        height: 4px;
+        background-color: #0078d6;
+        border-radius: 50%;
+        margin: 40px auto 0 auto;
+        opacity: 0.2;
+    }
+
+    /* Ta bort pricken efter sista steget */
+    .step:last-child::after {
+        display: none;
+    }
+
+    .number {
+        margin-bottom: 15px;
+    }
+
+    .stepTitle {
+        font-size: 1.4rem;
+    }
+
+    .text {
+        max-width: 320px; /* Förhindrar att texten blir för bred och svårläst */
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,178 @@
+/* src/components/Features.module.css */
+
+.section {
+    padding: 160px 0;
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    padding: 0 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 90px;
+    max-width: 800px;
+}
+
+.label {
+    font-family: var(--font-inter);
+    font-size: 0.7rem;
+    letter-spacing: 0.6em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 25px;
+    display: block;
+}
+
+.title {
+    font-family: var(--font-playfair);
+    font-size: clamp(2.5rem, 5vw, 3.8rem);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+}
+
+.featureList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+}
+
+.featureItem {
+    position: relative;
+    height: 650px; /* Högre för att ge plats åt bild + text block */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: #0c0c0c; /* En något ljusare svart för textblocket */
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.03); /* Mycket subtil ram */
+}
+
+/* --- BILD OCH TONING --- */
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    height: 55%; /* Bilden tar upp drygt hälften */
+    overflow: hidden;
+    z-index: 1;
+}
+
+.bgImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.9);
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Den mjuka toningen från bilden ner till texten */
+.imageWrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* En lyxig gradient som tonar från klart till mörkt i botten */
+    background: linear-gradient(
+        to top, 
+        #0c0c0c 0%,        /* Matchar textblockets bakgrund */
+        rgba(12, 12, 12, 0.8) 15%, 
+        rgba(12, 12, 12, 0.2) 50%,
+        transparent 100%
+    );
+    z-index: 2;
+    pointer-events: none; /* Klick går igenom */
+}
+
+/* Hover-effekt på bilden */
+.featureItem:hover .bgImage {
+    transform: scale(1.03);
+}
+
+/* --- TEXTBLOCKET --- */
+.content {
+    position: relative;
+    width: 100%;
+    height: 45%; /* Textblocket tar upp resten */
+    padding: 40px 45px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Sprider ut text och nummer vertikalt */
+    z-index: 10;
+    background-color: #0c0c0c; /* Matchar toningen */
+}
+
+.featureItem h4 {
+    font-family: var(--font-inter);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    margin-bottom: 15px;
+    color: #0078d6; /* Accentfärg */
+    opacity: 0.8;
+}
+
+.featureItem h3 {
+    font-family: var(--font-playfair);
+    font-size: 1.7rem;
+    margin-bottom: 18px;
+    color: #ffffff;
+    line-height: 1.2;
+}
+
+.featureItem p {
+    font-family: var(--font-inter);
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.7;
+    font-weight: 300;
+    max-width: 320px;
+}
+
+.cardNumber {
+    font-family: var(--font-inter);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.2);
+    align-self: flex-end; /* Siffran i botten till höger */
+}
+
+/* --- RESPONSIVITET --- */
+
+@media (max-width: 1100px) {
+    .container { padding: 0 5%; }
+}
+
+@media (max-width: 1024px) {
+    .featureList {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section { padding: 90px 0; }
+    
+    .featureList {
+        grid-template-columns: 1fr;
+    }
+
+    .featureItem {
+        height: 550px; /* Något lägre på mobil */
+    }
+
+    .content {
+        padding: 35px 30px;
+    }
+
+    .featureItem h3 {
+        font-size: 1.5rem;
+    }
+}

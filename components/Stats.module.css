@@ -1,0 +1,80 @@
+/* src/components/Stats.module.css */
+
+.section {
+    padding: 150px 0;
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+    padding: 0 10%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrerar hela gridden i sektionen */
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 100px; /* Mer luft mellan siffrorna för en lyxigare känsla */
+    width: 100%;
+    max-width: 1200px; /* Begränsar bredden så det inte blir för utspritt */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 80px;
+}
+
+.statBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrerar texten inuti varje individuell box */
+    text-align: center;   /* Centrerar textraderna */
+}
+
+.number {
+    font-family: var(--font-playfair);
+    font-size: clamp(3.5rem, 7vw, 5.5rem);
+    line-height: 1;
+    font-weight: 400;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: baseline;
+}
+
+.number span {
+    font-size: 0.35em;
+    color: rgba(255, 255, 255, 0.3);
+    margin-left: 8px;
+    font-family: var(--font-inter); /* Suffixet ser modernare ut i sans-serif */
+    font-weight: 300;
+}
+
+.label {
+    font-family: var(--font-inter);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5em; /* Extra luftigt */
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 15px;
+}
+
+.description {
+    font-family: var(--font-inter);
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.7;
+    max-width: 280px;
+    font-weight: 300;
+}
+
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: 1fr; /* Staplar dem på mobilen */
+        gap: 80px;
+        padding-top: 60px;
+    }
+}

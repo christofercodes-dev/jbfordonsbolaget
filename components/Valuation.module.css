@@ -1,0 +1,98 @@
+/* src/components/Valuation.module.css */
+
+.section {
+    padding: 200px 0;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* En centrerad ljuskägla för att ge fokus åt mitten */
+.section::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 60%;
+    pointer-events: none;
+}
+
+.container {
+    width: 100%;
+    padding: 0 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrerar barnen */
+    text-align: center;   /* Centrerar texten */
+    z-index: 2;
+}
+
+.label {
+    font-family: var(--font-inter);
+    font-size: 0.7rem;
+    letter-spacing: 0.6em;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 30px;
+    display: block;
+}
+
+.title {
+    font-family: var(--font-playfair);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: #000;
+    line-height: 1.1;
+    max-width: 900px; /* Något bredare för att se bra ut när det är centrerat */
+    margin-bottom: 60px;
+    letter-spacing: -0.02em;
+}
+
+.title span {
+    display: block; /* Gör att "rätta marknadsvärde" hamnar på egen rad för effekt */
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.ctaWrapper {
+    display: flex;
+    flex-direction: column; /* Staplar knapp och undertext vertikalt */
+    align-items: center;
+    gap: 30px;
+}
+
+.primaryBtn {
+    background-color: #0078d6;
+    color: #fff;
+    padding: 24px 60px; /* Lite bredare för att dominera mitten */
+    font-family: var(--font-inter);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+}
+
+.primaryBtn:hover {
+    background-color: #0086f0;
+    transform: translateY(-3px);
+}
+
+.secondaryText {
+    font-family: var(--font-inter);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.3);
+    line-height: 1.6;
+    font-weight: 300;
+    max-width: 300px;
+}
+
+@media (max-width: 1024px) {
+    .container { padding: 0 5%; }
+    .title { font-size: 2.2rem; }
+}

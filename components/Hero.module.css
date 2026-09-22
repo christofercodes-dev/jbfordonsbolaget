@@ -1,0 +1,589 @@
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  padding: 5rem 2rem;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(11, 13, 23, 0.94) 0%,
+      rgba(11, 13, 23, 0.8) 42%,
+      rgba(11, 13, 23, 0.38) 100%
+    ),
+    url("/images/volvo-bg.png") center / cover no-repeat;
+
+  color: #ffffff;
+}
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background: radial-gradient(
+    circle at 70% 50%,
+    rgba(255, 255, 255, 0.08),
+    transparent 35%
+  );
+
+  opacity: 0;
+  animation: backgroundReveal 1.8s ease forwards;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.content {
+  max-width: 620px;
+  text-align: left;
+}
+
+.title {
+  max-width: 650px;
+  margin: 60px 0 1.25rem;
+
+  font-size: clamp(2.5rem, 5vw, 4.25rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+
+  opacity: 0;
+  transform: translateY(35px);
+
+  animation:
+    titleReveal 0.9s 0.15s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    forwards;
+}
+
+.highlight {
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #9ca3af 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.description {
+  width: 450px;
+  max-width: 100%;
+  margin: 0 0 2.5rem;
+
+  color: #d5d5d5;
+  font-size: 1.125rem;
+  line-height: 1.65;
+
+  opacity: 0;
+  transform: translateY(25px);
+
+  animation:
+    fadeUp 0.8s 0.45s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+}
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  opacity: 0;
+  transform: translateY(20px);
+
+  animation:
+    fadeUp 0.8s 0.65s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+}
+
+.btnPrimary,
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  min-height: 50px;
+  padding: 0.875rem 2rem;
+
+  border-radius: 50px;
+
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.btnPrimary {
+  border: 1px solid #0078d6;
+  background: #0078d6;
+  color: #ffffff;
+}
+
+.btnPrimary:hover {
+  background: #e4e4e7;
+  border-color: #e4e4e7;
+  color: #0b0d17;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.btnSecondary {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.btnSecondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+
+  transform: translateY(-3px);
+}
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+
+  max-width: 600px;
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  opacity: 0;
+  transform: translateY(15px);
+
+  animation:
+    fadeUp 0.8s 0.85s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.statNumber {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.statLabel {
+  margin-top: 0.25rem;
+
+  color: #9ca3af;
+  font-size: 0.875rem;
+}
+
+/* =========================================================
+   GOOGLE RATING
+========================================================= */
+
+.googleRating {
+  position: absolute;
+  z-index: 3;
+
+  right: 2rem;
+  bottom: 2rem;
+
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  padding: 0.8rem 1rem;
+
+  background: rgba(11, 13, 23, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.2);
+
+  color: #ffffff;
+
+  opacity: 0;
+
+  animation:
+    ratingReveal 0.9s 1.1s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.googleRating:hover {
+  background: rgba(11, 13, 23, 0.7);
+  border-color: rgba(255, 255, 255, 0.22);
+  transform: translateY(-3px);
+}
+
+.googleMark {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+}
+
+.googleMark img {
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+
+.googleContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.googleTop {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.googleRatingNumber {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.googleStars {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  color: #fbbc04;
+}
+
+.googleLabel {
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes titleReveal {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes backgroundReveal {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ratingReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================================================
+   TABLET / RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 90vh;
+    padding: 4rem 1.5rem;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(11, 13, 23, 0.88) 0%,
+        rgba(11, 13, 23, 0.76) 55%,
+        rgba(11, 13, 23, 0.52) 100%
+      ),
+      url("/images/volvo-bg.png") 65% center / cover no-repeat;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .content {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+
+    text-align: center;
+  }
+
+  .title {
+    margin-top: 30px;
+
+    font-size: clamp(2.7rem, 9vw, 4rem);
+    line-height: 1;
+  }
+
+  .description {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto 2rem;
+
+    font-size: 1rem;
+  }
+
+  .actions {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .stats {
+    justify-content: center;
+    align-items: flex-start;
+
+    width: 100%;
+    max-width: 500px;
+    margin: 2.5rem auto 0;
+
+    gap: 2.5rem;
+  }
+
+  .statItem {
+    align-items: center;
+    text-align: center;
+  }
+
+  .googleRating {
+    right: 1.5rem;
+    bottom: 1.5rem;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: 92svh;
+    padding: 3.5rem 1.25rem;
+  }
+
+  .content {
+    max-width: 100%;
+    align-items: center;
+  }
+
+  .title {
+    margin-top: 20px;
+    margin-bottom: 1.25rem;
+
+    font-size: clamp(2.5rem, 12vw, 4rem);
+    line-height: 0.98;
+  }
+
+  .description {
+    max-width: 480px;
+    margin-bottom: 2rem;
+
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .actions {
+    width: 100%;
+    max-width: 440px;
+
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 0.75rem;
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    width: 100%;
+    box-sizing: border-box;
+
+    min-height: 50px;
+    padding: 0.8rem 1.25rem;
+
+    font-size: 0.9rem;
+  }
+
+  .stats {
+    justify-content: center;
+
+    width: 100%;
+    max-width: 420px;
+
+    gap: 1.5rem;
+
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+  }
+
+  .statItem {
+    flex: 1;
+    align-items: center;
+  }
+
+  .statNumber {
+    font-size: 1rem;
+  }
+
+  .statLabel {
+    font-size: 0.7rem;
+  }
+
+  .googleRating {
+    position: relative;
+
+    right: auto;
+    bottom: auto;
+
+    width: fit-content;
+    margin: 2rem auto 0;
+
+    padding: 0.65rem 0.8rem;
+  }
+
+  .googleMark {
+    width: 42px;
+    height: 42px;
+  }
+
+  .googleMark img {
+    width: 27px;
+    height: 27px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+  .hero {
+    min-height: 94svh;
+    padding: 3rem 1rem;
+  }
+
+  .title {
+    font-size: clamp(2.35rem, 13vw, 3.4rem);
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .stats {
+    gap: 0.75rem;
+  }
+
+  .statNumber {
+    font-size: 0.95rem;
+  }
+
+  .statLabel {
+    font-size: 0.65rem;
+  }
+}

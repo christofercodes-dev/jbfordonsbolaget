@@ -1,0 +1,253 @@
+.banner {
+    padding: 2.5rem 2rem;
+  
+    background: #ffffff;
+    color: #0b0d17;
+  
+    border-bottom: 1px solid #dedcd6;
+  
+    opacity: 0;
+    transform: translateY(25px);
+  
+    transition:
+      opacity 0.8s ease,
+      transform 0.8s ease;
+  }
+  
+  .banner.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .content {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr 1fr;
+  
+    align-items: center;
+  
+    gap: 2.5rem;
+  }
+  
+  /* ================================
+     BRANDS
+  ================================ */
+  
+  .brandSide {
+    display: grid;
+  
+    grid-template-columns: repeat(4, 1fr);
+  
+    align-items: center;
+  
+    gap: 1.5rem;
+  }
+  
+  .brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    opacity: 0;
+  
+    filter: blur(4px);
+  
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease,
+      filter 0.6s ease;
+  
+    transition-delay: var(--delay);
+  
+    transform: translateY(18px);
+  }
+  
+  /* Vänster sida */
+  
+  .left .brand {
+    transform: translateX(-25px) translateY(10px);
+  }
+  
+  /* Höger sida */
+  
+  .right .brand {
+    transform: translateX(25px) translateY(10px);
+  }
+  
+  /* När sektionen blir synlig */
+  
+  .visible .brand {
+    opacity: 0.48;
+  
+    filter: blur(0);
+  
+    transform: translateX(0) translateY(0);
+  }
+  
+  .brand:hover {
+    opacity: 0.8;
+  
+    transform: translateY(-3px) scale(1.03);
+  }
+  
+  .brandIcon {
+    width: 42px;
+    height: 42px;
+  
+    filter: grayscale(1);
+  
+    transition: transform 0.3s ease;
+  }
+  
+  .brand:hover .brandIcon {
+    transform: scale(1.05);
+  }
+  
+  /* ================================
+     CENTER
+  ================================ */
+  
+  .center {
+    display: flex;
+  
+    flex-direction: column;
+  
+    align-items: center;
+  
+    text-align: center;
+  
+    padding: 0 1rem;
+  
+    opacity: 0;
+    transform: translateY(15px);
+  
+    transition:
+      opacity 0.7s ease 0.1s,
+      transform 0.7s ease 0.1s;
+  }
+  
+  .visible .center {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .label {
+    margin-bottom: 0.55rem;
+  
+    color: #a3a3a3;
+  
+    font-size: 0.55rem;
+    font-weight: 700;
+  
+    letter-spacing: 0.18em;
+  }
+  
+  .center p {
+    margin: 0;
+  
+    color: #4f4d48;
+  
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+  
+  .center p strong {
+    color: #0b0d17;
+  
+    font-weight: 600;
+  }
+  
+  /* ================================
+     TABLET
+  ================================ */
+  
+  @media (max-width: 900px) {
+    .content {
+      grid-template-columns: 1fr;
+  
+      gap: 1.5rem;
+    }
+  
+    .center {
+      order: -1;
+    }
+  
+    .brandSide {
+      grid-template-columns: repeat(4, 1fr);
+  
+      max-width: 520px;
+  
+      width: 100%;
+  
+      margin: 0 auto;
+    }
+  
+    .left .brand,
+    .right .brand {
+      transform: translateY(15px);
+    }
+  
+    .visible .left .brand,
+    .visible .right .brand {
+      transform: translateY(0);
+    }
+  }
+  
+  /* ================================
+     MOBILE
+  ================================ */
+  
+  @media (max-width: 600px) {
+    .banner {
+      padding: 2rem 1.25rem;
+    }
+  
+    .content {
+      gap: 1.25rem;
+    }
+  
+    .center {
+      padding: 0;
+    }
+  
+    .brandSide {
+      gap: 0.75rem;
+    }
+  
+    .brandIcon {
+      width: 34px;
+      height: 34px;
+    }
+  
+    .center p {
+      font-size: 0.76rem;
+    }
+  
+    .label {
+      font-size: 0.52rem;
+    }
+  }
+  
+  /* ================================
+     REDUCED MOTION
+  ================================ */
+  
+  @media (prefers-reduced-motion: reduce) {
+    .banner,
+    .center,
+    .brand,
+    .brandIcon {
+      opacity: 1;
+  
+      transform: none;
+  
+      filter: none;
+  
+      transition: none;
+    }
+  }
