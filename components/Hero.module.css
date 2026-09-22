@@ -473,7 +473,7 @@
   }
 
   .title {
-    margin-top: 20px;
+    margin-top: 60px;
     margin-bottom: 1.25rem;
 
     font-size: clamp(2.5rem, 12vw, 4rem);
