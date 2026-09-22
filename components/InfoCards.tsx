@@ -88,10 +88,7 @@ export default function InfoCards() {
                 className={styles.link}
               >
                 <span>Sälj din bil</span>
-                <ArrowUpRight
-                  size={17}
-                  strokeWidth={1.5}
-                />
+
               </Link>
             </div>
           </div>

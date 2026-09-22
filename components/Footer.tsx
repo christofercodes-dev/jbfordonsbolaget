@@ -20,7 +20,6 @@ export default function Footer() {
 
           <Link href="#salj-bil" className={styles.ctaButton}>
             <span>Sälj din bil</span>
-            <ArrowUpRight size={19} strokeWidth={1.5} />
           </Link>
         </div>
 

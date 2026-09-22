@@ -24,9 +24,8 @@ export default function About() {
               affär.
             </p>
 
-            <Link href="/om-oss" className={styles.link}>
+            <Link href="#om-oss" className={styles.link}>
               <span>Läs mer om oss</span>
-              <span>↗</span>
             </Link>
           </div>
         </div>

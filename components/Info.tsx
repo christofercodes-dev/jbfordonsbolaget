@@ -53,7 +53,6 @@ export default function Info() {
 
               <div className={styles.imageMeta}>
                 <span>JB FORDONSBOLAGET</span>
-                <span>01 / 03</span>
               </div>
             </div>
 
@@ -85,15 +84,11 @@ export default function Info() {
               </div>
 
               <Link
-                href="/kontakt"
+                href="#kontakt"
                 className={styles.button}
               >
                 <span>Kontakta oss</span>
 
-                <ArrowUpRight
-                  size={18}
-                  strokeWidth={1.5}
-                />
               </Link>
             </div>
           </div>
