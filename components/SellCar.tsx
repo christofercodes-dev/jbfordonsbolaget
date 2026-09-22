@@ -1,6 +1,6 @@
 "use client";
 
-import { Turnstile } from "@marsidev/react-turnstile";
+/* import { Turnstile } from "@marsidev/react-turnstile"; */
 import { useEffect, useState } from "react";
 import {
   ArrowUpRight,
@@ -39,8 +39,8 @@ export default function SellCar() {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
-  const [reviewVisible, setReviewVisible] = useState(false);
+/*   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+ */  const [reviewVisible, setReviewVisible] = useState(false);
   const [ratingValue, setRatingValue] = useState(0);
 
   /* -------------------------------------------------
@@ -151,54 +151,23 @@ export default function SellCar() {
     }));
   };
 
-  const handleSubmit = async (
+  const handleSubmit = (
     e: React.FormEvent<HTMLFormElement>
   ) => {
     e.preventDefault();
-
-    if (!turnstileToken) {
-      alert("Bekräfta att du inte är en robot.");
-      return;
-    }
-
-    setIsSubmitting(true);
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          ...formData,
-          turnstileToken,
-        })
-      });
-
-      const result = await response.json();
-
-      if (!response.ok) {
-        throw new Error(
-          result.error || "Kunde inte skicka formuläret."
-        );
-      }
-
-      setSubmitted(true);
-    } catch (error) {
-      console.error("Formulärfel:", error);
-
-      alert(
-        "Något gick fel när formuläret skulle skickas. Försök igen."
-      );
-    } finally {
-      setIsSubmitting(false);
-    }
+  
+    setSubmitted(true);
   };
+
+/*   const handleReset = () => {
+    setFormData(initialFormData);
+    setSubmitted(false);
+    setTurnstileToken(null);
+  }; */
 
   const handleReset = () => {
     setFormData(initialFormData);
     setSubmitted(false);
-    setTurnstileToken(null);
   };
 
   return (
@@ -450,17 +419,17 @@ export default function SellCar() {
                   />
                 </div>
 
-                <Turnstile
+             {/*    <Turnstile
                   siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
                   onSuccess={(token) => setTurnstileToken(token)}
                   onExpire={() => setTurnstileToken(null)}
                   onError={() => setTurnstileToken(null)}
-                />
+                /> */}
 
                 <button
                   type="submit"
                   className={styles.submitButton}
-                  disabled={isSubmitting || !turnstileToken}>
+                  disabled={isSubmitting}>
                   <span>
                     {isSubmitting
                       ? "Skickar..."
