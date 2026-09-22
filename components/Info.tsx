@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+
 import styles from "./Info.module.css";
 
 export default function Info() {
@@ -70,8 +70,8 @@ export default function Info() {
 
               <div className={styles.text}>
                 <p>
-                  Nordic Auto hjälper privatpersoner att sälja sin
-                  bil på ett enkelt och tryggt sätt. Vi köper bilar
+                  JB Fordonsbolaget hjälper privatpersoner att sälja
+                  sin bil på ett enkelt och tryggt sätt. Vi köper bilar
                   från hela Sverige och tar hand om processen från
                   första kontakt till avslutad affär.
                 </p>
@@ -88,7 +88,6 @@ export default function Info() {
                 className={styles.button}
               >
                 <span>Kontakta oss</span>
-
               </Link>
             </div>
           </div>

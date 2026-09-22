@@ -33,14 +33,13 @@ export default function Navbar() {
           <span className={styles.logoMark}>JB</span>
 
           <span className={styles.logoText}>
-            FORDONS
-            <span>BOLAGET</span>
+            FORDONS<span></span>BOLAGET
           </span>
         </Link>
 
         <nav className={styles.nav}>
           <Link href="#salj-bil">Sälj din bil</Link>
-          <Link href="#om-oss">Hur det fungerar</Link>
+          <Link href="#om-oss">Så fungerar det</Link>
         </nav>
 
         <div className={styles.actions}>

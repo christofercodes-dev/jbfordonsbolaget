@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from "./Hero.module.css";
-import { Star } from "lucide-react";
+import { Check, Star } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -11,57 +11,80 @@ export default function Hero() {
 
       <div className={styles.container}>
         <div className={styles.content}>
-       
 
           <h1 className={styles.title}>
             <span className={styles.titleLine}>
-              Rätt bil till rätt pris.
+              Sälj din bil. <br />
             </span>
 
             <span className={styles.titleLine}>
               <span className={styles.highlight}>
-                Helt utan krångel.
+                Till oss.
               </span>
             </span>
           </h1>
 
           <p className={styles.description}>
-            Vi hjälper dig att köpa, sälja eller förmedla din bil
-            med maximal trygghet. Låt oss ta hand om hela processen
-            medan du fokuserar på vägen framåt.
+            Sälj din bil enkelt och tryggt till oss.
+            Få en snabb värdering, ett tydligt bud och
+            säker betalning.
           </p>
 
           <div className={styles.actions}>
             <Link
-              href="#om-oss"
+              href="#salj-bil"
               className={styles.btnPrimary}
             >
-              <span>Läs mer</span>
+              <span>Sälj din bil</span>
             </Link>
 
             <Link
-              href="#salj-bil"
+              href="#om-oss"
               className={styles.btnSecondary}
             >
-              <span>Sälj din bil</span>
+              <span>Så fungerar det</span>
             </Link>
           </div>
 
           <div className={styles.stats}>
             <div className={styles.statItem}>
-              <span className={styles.statNumber}>Tryggt</span>
+              <Check
+                className={styles.statIcon}
+                size={17}
+                strokeWidth={1.8}
+              />
+
+              <span className={styles.statNumber}>
+                Snabb värdering
+              </span>
             </div>
 
             <div className={styles.statDivider} />
 
             <div className={styles.statItem}>
-              <span className={styles.statNumber}>Snabbt</span>
+              <Check
+                className={styles.statIcon}
+                size={17}
+                strokeWidth={1.8}
+              />
+
+              <span className={styles.statNumber}>
+                Tydligt bud
+              </span>
             </div>
 
             <div className={styles.statDivider} />
 
             <div className={styles.statItem}>
-              <span className={styles.statNumber}>Enkelt</span>
+              <Check
+                className={styles.statIcon}
+                size={17}
+                strokeWidth={1.8}
+              />
+
+              <span className={styles.statNumber}>
+                Säker betalning
+              </span>
             </div>
           </div>
         </div>

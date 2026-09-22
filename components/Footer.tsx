@@ -46,7 +46,7 @@ export default function Footer() {
               <span className={styles.columnTitle}>NAVIGERA</span>
 
               <Link href="#salj-bil">Sälj din bil</Link>
-              <Link href="#om-oss">Hur det fungerar</Link>
+              <Link href="#om-oss">Så fungerar det</Link>
             </div>
 
             <div className={styles.column}>
