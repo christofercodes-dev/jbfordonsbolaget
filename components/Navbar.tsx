@@ -71,40 +71,30 @@ export default function Navbar() {
         }`}
       >
         <nav>
+
+
           <Link
-            href="/bilar"
+            href="#salj-bil"
             onClick={() => setMenuOpen(false)}
           >
             <span>01</span>
-            Bilar
-            <i>↗</i>
+            Sälj din bil
           </Link>
 
           <Link
-            href="/salj-bil"
+            href="#om-oss"
             onClick={() => setMenuOpen(false)}
           >
             <span>02</span>
-            Sälj din bil
-            <i>↗</i>
+            Hur det fungerar
           </Link>
 
           <Link
-            href="/om-oss"
+            href="#kontakt"
             onClick={() => setMenuOpen(false)}
           >
             <span>03</span>
-            Om oss
-            <i>↗</i>
-          </Link>
-
-          <Link
-            href="/kontakt"
-            onClick={() => setMenuOpen(false)}
-          >
-            <span>04</span>
             Kontakt
-            <i>↗</i>
           </Link>
         </nav>
 
