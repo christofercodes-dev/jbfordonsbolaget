@@ -18,9 +18,9 @@
   background:
     linear-gradient(
       90deg,
-      rgba(11, 13, 23, 0.94) 0%,
-      rgba(11, 13, 23, 0.8) 42%,
-      rgba(11, 13, 23, 0.38) 100%
+      rgba(11, 13, 23, 0.9) 0%,
+      rgba(11, 13, 23, 0.7) 42%,
+      rgba(11, 13, 23, 0.1) 100%
     ),
     url("/images/volvo-bg.png") center / cover no-repeat;
 
@@ -576,9 +576,9 @@
     background:
       linear-gradient(
         180deg,
-        rgba(11, 13, 23, 0.9) 0%,
-        rgba(11, 13, 23, 0.82) 48%,
-        rgba(11, 13, 23, 0.68) 100%
+        rgba(11, 13, 23, 0.7) 0%,
+        rgba(11, 13, 23, 0.5) 48%,
+        rgba(11, 13, 23, 0.3) 100%
       ),
       url("/images/volvo-bg.png")
         68% center / cover no-repeat;
@@ -724,9 +724,9 @@
     background:
       linear-gradient(
         180deg,
-        rgba(11, 13, 23, 0.92) 0%,
-        rgba(11, 13, 23, 0.84) 48%,
-        rgba(11, 13, 23, 0.7) 100%
+        rgba(11, 13, 23, 0.58) 0%,
+        rgba(11, 13, 23, 0.38) 45%,
+        rgba(11, 13, 23, 0.18) 100%
       ),
       url("/images/volvo-bg.png")
         70% center / cover no-repeat;
@@ -756,13 +756,11 @@
     );
 
     line-height: 0.95;
-
     letter-spacing: -0.055em;
   }
 
   .description {
     width: 100%;
-
     max-width: 380px;
 
     margin:
@@ -771,23 +769,16 @@
       1.75rem;
 
     font-size: 0.92rem;
-
     line-height: 1.6;
   }
 
-  /* -------------------------------------------------------
-     BUTTONS
-  ------------------------------------------------------- */
-
   .actions {
     width: 100%;
-
     max-width: 350px;
 
     margin: 0 auto;
 
     flex-direction: column;
-
     align-items: stretch;
 
     gap: 0.65rem;
@@ -811,14 +802,8 @@
     transform: none;
   }
 
-
-  /* -------------------------------------------------------
-     STATS
-  ------------------------------------------------------- */
-
   .stats {
     width: 100%;
-
     max-width: 390px;
 
     margin:
@@ -835,11 +820,9 @@
 
   .statItem {
     flex: 1;
-
     min-width: 0;
 
     display: flex;
-
     flex-direction: column;
 
     align-items: center;
@@ -861,7 +844,6 @@
     max-width: 90px;
 
     font-size: 0.72rem;
-
     line-height: 1.35;
 
     white-space: normal;
@@ -873,13 +855,8 @@
 
     margin-top: 2px;
 
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.18);
   }
-
-
-  /* -------------------------------------------------------
-     GOOGLE RATING
-  ------------------------------------------------------- */
 
   .googleRating {
     position: relative;
@@ -949,9 +926,9 @@
     background:
       linear-gradient(
         180deg,
-        rgba(11, 13, 23, 0.93) 0%,
-        rgba(11, 13, 23, 0.85) 50%,
-        rgba(11, 13, 23, 0.72) 100%
+        rgba(11, 13, 23, 0.4) 0%,
+        rgba(11, 13, 23, 0.7) 50%,
+        rgba(11, 13, 23, 0.4) 100%
       ),
       url("/images/volvo-bg.png")
         72% center / cover no-repeat;

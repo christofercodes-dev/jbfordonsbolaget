@@ -33,7 +33,7 @@ export default function Navbar() {
           <span className={styles.logoMark}>JB</span>
 
           <span className={styles.logoText}>
-            FORDONS<span></span>BOLAGET
+            FORDONSBOLAGET
           </span>
         </Link>
 
