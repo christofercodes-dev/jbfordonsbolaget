@@ -1,13 +1,11 @@
-/* src/app/globals.css */
-
 @import "tailwindcss";
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  /* Vi lägger till dessa för att säkerställa att variablerna existerar */
-  --font-inter: 'Inter', sans-serif;
-  --font-playfair: 'Playfair Display', serif;
+
+  --font-inter: "Inter", sans-serif;
+  --font-playfair: "Playfair Display", serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,38 +21,30 @@
   margin: 0;
 }
 
-html, body {
-  /* Tvinga bort eventuella låsningar från Lenis under felsökning */
-  overflow-x: hidden !important;
-  overflow-y: auto !important; 
-  height: auto !important;
-  background: #fff; /* Vi sätter svart som bas för att matcha din sajt */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-anchor: none;
 }
 
 body {
+  background: #ffffff;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
-  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-html {
-  scroll-behavior: smooth;
-  scroll-restoration: auto;
-
+/* Navbar */
+header {
+  z-index: 9999;
 }
 
-/* TVINGA NAVBAREN ATT ALLTID VARA KLICKBAR */
-nav, header {
-  z-index: 9999 !important;
-  position: relative;
-  pointer-events: all !important;
-}
-
-
-
-/* Enkel fix om texten är vit-på-vit */
-h1, h2, h3, p {
+/* Text above decorative elements */
+h1,
+h2,
+h3,
+p {
   position: relative;
   z-index: 10;
 }
