@@ -35,16 +35,15 @@ export default function Info() {
     <main className={styles.page}>
       <section
         ref={sectionRef}
-        className={`${styles.info} ${
-          isVisible ? styles.visible : ""
-        }`}
+        className={`${styles.info} ${isVisible ? styles.visible : ""
+          }`}
       >
         <div className={styles.container}>
           <div className={styles.grid}>
             {/* BILD VÄNSTER */}
             <div className={styles.imageWrapper}>
               <img
-                src="/images/volvo-bg.png"
+                src="/images/clio.png"
                 alt="Bil i nordisk miljö"
                 className={styles.image}
               />
@@ -70,10 +69,9 @@ export default function Info() {
 
               <div className={styles.text}>
                 <p>
-                  JB Fordonsbolaget hjälper privatpersoner att sälja
-                  sin bil på ett enkelt och tryggt sätt. Vi köper bilar
-                  från hela Sverige och tar hand om processen från
-                  första kontakt till avslutad affär.
+                  JB Fordonsbolaget köper bilar från privatpersoner över hela Sverige.
+                  Vi erbjuder en enkel och trygg process med snabb värdering, tydligt
+                  bud och säker betalning – från första kontakt till avslutad affär.
                 </p>
 
                 <p>

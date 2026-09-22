@@ -22,7 +22,7 @@
       rgba(11, 13, 23, 0.7) 42%,
       rgba(11, 13, 23, 0.1) 100%
     ),
-    url("/images/volvo-bg.png") center / cover no-repeat;
+    url("/images/volvobg.png") center / cover no-repeat;
 
   color: #ffffff;
 }
@@ -471,7 +471,7 @@
         rgba(11, 13, 23, 0.8) 52%,
         rgba(11, 13, 23, 0.55) 100%
       ),
-      url("/images/volvo-bg.png")
+      url("/images/volvobg.png")
         65% center / cover no-repeat;
   }
 
@@ -580,7 +580,7 @@
         rgba(11, 13, 23, 0.5) 48%,
         rgba(11, 13, 23, 0.3) 100%
       ),
-      url("/images/volvo-bg.png")
+      url("/images/volvobg.png")
         68% center / cover no-repeat;
   }
 
@@ -728,7 +728,7 @@
         rgba(11, 13, 23, 0.38) 45%,
         rgba(11, 13, 23, 0.18) 100%
       ),
-      url("/images/volvo-bg.png")
+      url("/images/volvobg.png")
         70% center / cover no-repeat;
   }
 
@@ -930,7 +930,7 @@
         rgba(11, 13, 23, 0.45) 50%,
         rgba(11, 13, 23, 0.3) 100%
       ),
-      url("/images/volvo-bg.png")
+      url("/images/volvobg.png")
         72% center / cover no-repeat;
   }
 
