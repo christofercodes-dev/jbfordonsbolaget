@@ -257,10 +257,7 @@ export default function SellCar() {
               </span>
 
               <div className={styles.directContactLinks}>
-                <a href="tel:+46701234567">
-                  <span>Ring oss</span>
-                  <strong>070-123 45 67</strong>
-                </a>
+              
 
                 <a href="mailto:hej@jbfordonsbolaget.se">
                   <span>Maila oss</span>

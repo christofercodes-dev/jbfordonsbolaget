@@ -52,7 +52,6 @@ export default function Footer() {
             <div className={styles.column}>
               <span className={styles.columnTitle}>KONTAKT</span>
 
-              <a href="tel:+46101234567">010-123 45 67</a>
               <a href="mailto:hej@jbfordonsbolaget.se">
                 hej@jbfordonsbolaget.se
               </a>
