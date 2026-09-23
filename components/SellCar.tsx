@@ -1,6 +1,6 @@
 "use client";
 
-/* import { Turnstile } from "@marsidev/react-turnstile"; */
+import { Turnstile } from "@marsidev/react-turnstile";
 import { useEffect, useState } from "react";
 import {
   ArrowUpRight,
@@ -39,8 +39,8 @@ export default function SellCar() {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-/*   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
- */  const [reviewVisible, setReviewVisible] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const [reviewVisible, setReviewVisible] = useState(false);
   const [ratingValue, setRatingValue] = useState(0);
 
   /* -------------------------------------------------
@@ -151,23 +151,56 @@ export default function SellCar() {
     }));
   };
 
-  const handleSubmit = (
+  const handleSubmit = async (
     e: React.FormEvent<HTMLFormElement>
   ) => {
     e.preventDefault();
-  
-    setSubmitted(true);
-  };
 
-/*   const handleReset = () => {
-    setFormData(initialFormData);
-    setSubmitted(false);
-    setTurnstileToken(null);
-  }; */
+    if (!turnstileToken) {
+      alert("Bekräfta att du inte är en robot.");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          turnstileToken,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(
+          result.details
+            ? `${result.error}: ${result.details}`
+            : result.error || "Kunde inte skicka formuläret."
+        );
+      }
+
+      setSubmitted(true);
+    } catch (error) {
+      console.error("Formulärfel:", error);
+
+      alert(
+        "Något gick fel när formuläret skulle skickas. Försök igen."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const handleReset = () => {
     setFormData(initialFormData);
     setSubmitted(false);
+    setTurnstileToken(null);
   };
 
   return (
@@ -208,48 +241,32 @@ export default function SellCar() {
                 </div>
               </div>
 
-              <div className={styles.trustPoints}>
-                <div className={styles.trustPoint}>
-                  <ShieldCheck size={20} strokeWidth={1.5} />
+              <div className={styles.trustPoint}>
+                <Clock3 size={20} strokeWidth={1.5} />
 
-                  <div>
-                    <strong>Trygg process</strong>
-                    <span>Hela vägen till affär</span>
-                  </div>
-                </div>
-
-                <div className={styles.trustPoint}>
-                  <Clock3 size={20} strokeWidth={1.5} />
-
-                  <div>
-                    <strong>Snabb återkoppling</strong>
-                    <span>Vi hör av oss så snart vi kan</span>
-                  </div>
+                <div>
+                  <strong>Snabb återkoppling</strong>
+                  <span>Vi hör av oss så snart vi kan</span>
                 </div>
               </div>
+            </div>
 
-              <div className={styles.directContact}>
-                <span className={styles.directContactLabel}>
-                  ELLER KONTAKTA OSS DIREKT
-                </span>
+            <div className={styles.directContact}>
+              <span className={styles.directContactLabel}>
+                ELLER KONTAKTA OSS DIREKT
+              </span>
 
-                <div className={styles.directContactLinks}>
-                  <a href="tel:+46701234567">
-                    <span>Ring oss</span>
-                    <strong>070-123 45 67</strong>
-                  </a>
+              <div className={styles.directContactLinks}>
+                <a href="tel:+46701234567">
+                  <span>Ring oss</span>
+                  <strong>070-123 45 67</strong>
+                </a>
 
-                 {/*  <span className={styles.directContactDivider}>
-                    eller
-                  </span> */}
-
-                  <a href="mailto:hej@jbfordonsbolaget.se">
-                    <span>Maila oss</span>
-                    <strong>info@dittforetag.se</strong>
-                  </a>
-                </div>
+                <a href="mailto:hej@jbfordonsbolaget.se">
+                  <span>Maila oss</span>
+                  <strong>hej@jbfordonsbolaget.se</strong>
+                </a>
               </div>
-
             </div>
           </div>
 
@@ -419,12 +436,12 @@ export default function SellCar() {
                   />
                 </div>
 
-             {/*    <Turnstile
+                <Turnstile
                   siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
                   onSuccess={(token) => setTurnstileToken(token)}
                   onExpire={() => setTurnstileToken(null)}
                   onError={() => setTurnstileToken(null)}
-                /> */}
+                />
 
                 <button
                   type="submit"
