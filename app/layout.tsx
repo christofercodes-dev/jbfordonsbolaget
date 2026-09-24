@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -20,6 +20,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "JB Fordonsbolaget",
   description: "JB Fordonsbolaget",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0b0d17",
 };
 
 export default function RootLayout({
