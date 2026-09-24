@@ -24,18 +24,16 @@ export default function Navbar() {
 
   return (
     <header
-      className={`${styles.navbar} ${
-        scrolled ? styles.scrolled : ""
-      }`}
+      className={`${styles.navbar} ${scrolled ? styles.scrolled : ""
+        }`}
     >
       <div className={styles.container}>
-        <Link href="/" className={styles.logo}>
+        <a href="/" className={styles.logo}>
           <span className={styles.logoMark}>JB</span>
-
           <span className={styles.logoText}>
             FORDONSBOLAGET
           </span>
-        </Link>
+        </a>
 
         <nav className={styles.nav}>
           <Link href="#salj-bil">Sälj din bil</Link>
@@ -51,9 +49,8 @@ export default function Navbar() {
           </Link>
 
           <button
-            className={`${styles.menuButton} ${
-              menuOpen ? styles.menuActive : ""
-            }`}
+            className={`${styles.menuButton} ${menuOpen ? styles.menuActive : ""
+              }`}
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Öppna meny"
             aria-expanded={menuOpen}
@@ -65,9 +62,8 @@ export default function Navbar() {
       </div>
 
       <div
-        className={`${styles.mobileMenu} ${
-          menuOpen ? styles.mobileMenuOpen : ""
-        }`}
+        className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ""
+          }`}
       >
         <nav>
 
