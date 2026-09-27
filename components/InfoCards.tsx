@@ -84,7 +84,7 @@ export default function InfoCards() {
               </p>
 
               <Link
-                href="/salj-bil"
+                href="#salj-bil"
                 className={styles.link}
               >
                 <span>Sälj din bil</span>
