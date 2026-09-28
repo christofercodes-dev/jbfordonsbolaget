@@ -29,19 +29,19 @@ export default function Hero() {
           </p>
 
           <div className={styles.actions}>
-            <Link
+            <a
               href="#salj-bil"
               className={styles.btnPrimary}
             >
               <span>Sälj din bil</span>
-            </Link>
+            </a>
 
-            <Link
+            <a
               href="#om-oss"
               className={styles.btnSecondary}
             >
               <span>Så fungerar det</span>
-            </Link>
+            </a>
           </div>
 
           <div className={styles.stats}>

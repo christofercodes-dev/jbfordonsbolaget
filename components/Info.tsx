@@ -81,12 +81,12 @@ export default function Info() {
                 </p>
               </div>
 
-              <Link
+              <a
                 href="#kontakt"
                 className={styles.button}
               >
                 <span>Kontakta oss</span>
-              </Link>
+              </a>
             </div>
           </div>
         </div>

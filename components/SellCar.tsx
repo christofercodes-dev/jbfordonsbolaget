@@ -543,9 +543,7 @@ export default function SellCar() {
                   ))}
                 </div>
 
-                <span className={styles.ratingScale}>
-                  / 5
-                </span>
+               
               </div>
             </div>
 
