@@ -5,13 +5,11 @@ import { Check, Star } from "lucide-react";
 export default function Hero() {
   return (
     <section className={styles.hero}>
-      {/* Subtila bakgrundselement */}
       <div className={styles.glow} />
       <div className={styles.grid} />
 
       <div className={styles.container}>
         <div className={styles.content}>
-
           <h1 className={styles.title}>
             <span className={styles.titleLine}>
               Sälj din bil. <br />
@@ -53,7 +51,6 @@ export default function Hero() {
                 size={17}
                 strokeWidth={1.8}
               />
-
               <span className={styles.statNumber}>
                 Snabb värdering
               </span>
@@ -67,7 +64,6 @@ export default function Hero() {
                 size={17}
                 strokeWidth={1.8}
               />
-
               <span className={styles.statNumber}>
                 Tydligt bud
               </span>
@@ -81,7 +77,6 @@ export default function Hero() {
                 size={17}
                 strokeWidth={1.8}
               />
-
               <span className={styles.statNumber}>
                 Säker betalning
               </span>
@@ -89,7 +84,12 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className={styles.googleRating}>
+        <a
+          href="https://www.google.com/maps/place/JB+Fordonsbolaget/@61.6301541,6.8764232,5z/data=!3m1!4b1!4m6!3m5!1s0x4cd4774d465ba925:0xad521847e4011440!8m2!3d62.0329767!4d17.3787426!16s%2Fg%2F11zxtd7lw4?entry=ttu&g_ep=EgoyMDI2MDkyMy4wIKXMDSoASAFQAw%3D%3D"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.googleRating}
+        >
           <div className={styles.googleMark}>
             <img
               src="/logos/google.svg"
@@ -118,8 +118,12 @@ export default function Hero() {
             <span className={styles.googleLabel}>
               Google Reviews
             </span>
+
+            <span className={styles.googleLink}>
+              Läs våra recensioner →
+            </span>
           </div>
-        </div>
+        </a>
       </div>
     </section>
   );

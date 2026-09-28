@@ -7,7 +7,6 @@ import {
   Landmark,
   Smartphone,
 } from "lucide-react";
-import Link from "next/link";
 import styles from "./InfoCards.module.css";
 
 const steps = [
@@ -61,9 +60,8 @@ export default function InfoCards() {
   return (
     <section
       id="om-oss"
-      className={`${styles.section} ${
-        isVisible ? styles.visible : ""
-      }`}
+      className={`${styles.section} ${isVisible ? styles.visible : ""
+        }`}
     >
       <div className={styles.container}>
         <div className={styles.intro}>
@@ -83,13 +81,12 @@ export default function InfoCards() {
                 resten.
               </p>
 
-              <Link
+              <a
                 href="#salj-bil"
                 className={styles.link}
               >
                 <span>Sälj din bil</span>
-
-              </Link>
+              </a>
             </div>
           </div>
         </div>
