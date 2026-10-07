@@ -190,24 +190,41 @@
   .column a:hover {
     color: #ffffff;
   }
-  
-  /* =========================================
-     BOTTOM
-  ========================================= */
-  
+
   .bottom {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid #282b36;
+    color: #555964;
+    font-size: 0.6rem;
+  }
+  
+  .bottom > span:last-child {
+    text-align: right;
+  }
+  
+  .ucBadge {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    opacity: 0.65;
+    transition: opacity 0.2s ease;
+  }
   
-    padding: 1.5rem 0;
+  .ucBadge img {
+    display: block;
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+  }
   
-    border-top: 1px solid #282b36;
-  
-    color: #555964;
-  
-    font-size: 0.6rem;
+  .ucBadge:hover {
+    opacity: 1;
   }
   
   .bottomLinks {

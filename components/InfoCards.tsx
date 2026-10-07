@@ -1,12 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import {
-  ArrowUpRight,
-  Check,
-  Landmark,
-  Smartphone,
-} from "lucide-react";
+import { Check, Landmark, Smartphone } from "lucide-react";
 import styles from "./InfoCards.module.css";
 
 const steps = [
@@ -60,10 +55,12 @@ export default function InfoCards() {
   return (
     <section
       id="om-oss"
-      className={`${styles.section} ${isVisible ? styles.visible : ""
-        }`}
+      className={`${styles.section} ${
+        isVisible ? styles.visible : ""
+      }`}
     >
       <div className={styles.container}>
+        {/* INTRO */}
         <div className={styles.intro}>
           <div className={styles.label}>SÅ FUNGERAR DET</div>
 
@@ -91,6 +88,33 @@ export default function InfoCards() {
           </div>
         </div>
 
+        {/* TRUST / UC */}
+        <div className={styles.trust}>
+          <div className={styles.trustText}>
+            <span className={styles.trustLabel}>
+              TRYGGT ATT GÖRA AFFÄR MED OSS
+            </span>
+
+            <span className={styles.trustDescription}>
+              Seriös bilförmedling med verifierad företagsinformation.
+            </span>
+          </div>
+
+          <a
+            href="https://www.uc.se/en/risksigill2?showorg=5596034701&language=eng"
+            title="The seal is issued by UC AB. The image is linked to information about UC's Credit Rating."
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.ucBadge}
+          >
+            <img
+              src="https://www.uc.se/ucsigill2/sigill?org=5596034701&language=eng&product=lsa&fontcolor=b&type=svg"
+              alt="UC Credit Rating"
+            />
+          </a>
+        </div>
+
+        {/* STEPS */}
         <div className={styles.steps}>
           {steps.map((step, index) => (
             <div
@@ -127,6 +151,7 @@ export default function InfoCards() {
           ))}
         </div>
 
+        {/* PAYMENT */}
         <div className={styles.payment}>
           <div className={styles.paymentContent}>
             <span className={styles.paymentLabel}>

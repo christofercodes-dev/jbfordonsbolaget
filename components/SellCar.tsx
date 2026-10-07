@@ -257,11 +257,16 @@ export default function SellCar() {
               </span>
 
               <div className={styles.directContactLinks}>
-              
-
                 <a href="mailto:hej@jbfordonsbolaget.se">
                   <span>Maila oss</span>
                   <strong>hej@jbfordonsbolaget.se</strong>
+                </a>
+
+                <span className={styles.directContactDivider}>/</span>
+
+                <a href="tel:+4644101919">
+                  <span>Ring oss</span>
+                  <strong>044-101919</strong>
                 </a>
               </div>
             </div>
@@ -543,7 +548,7 @@ export default function SellCar() {
                   ))}
                 </div>
 
-               
+
               </div>
             </div>
 

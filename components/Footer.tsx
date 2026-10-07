@@ -57,15 +57,30 @@ export default function Footer() {
               </a>
             </div>
 
-            
+
+
+
           </div>
+
         </div>
+
 
         {/* BOTTOM */}
         <div className={styles.bottom}>
           <span>© {new Date().getFullYear()} JB FORDONSBOLAGET</span>
 
-
+          <a
+            href="https://www.uc.se/risksigill2?showorg=5596034701&language=swe"
+            title="Sigillet är utfärdat av UC AB. Klicka på bilden för information om UC:s Riskklasser."
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.ucBadge}
+          >
+            <img
+              src="https://www.uc.se/ucsigill2/sigill?org=5596034701&language=swe&product=sla&fontcolor=b"
+              alt="UC Riskklass"
+            />
+          </a>
 
           <span>Din bil. Vår expertis.</span>
         </div>

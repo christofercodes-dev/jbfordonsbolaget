@@ -330,6 +330,63 @@
     border-color: rgba(255, 255, 255, 0.35);
     transform: translateY(-3px);
   }
+
+/* =========================================================
+   TRUST / UC
+========================================================= */
+
+.trust {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid #dedcd6;
+}
+
+.trustText {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.trustLabel {
+  color: #55534e;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.trustDescription {
+  color: #999790;
+  font-size: 0.72rem;
+}
+
+.ucBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 130px;
+  height: 100px;
+  text-decoration: none;
+}
+
+.ucBadge img {
+  display: block;
+  width: 130px;
+  height: 100px;
+  object-fit: contain;
+  opacity: 0.9;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.ucBadge:hover img {
+  opacity: 1;
+  transform: translateY(-1px);
+}
   
   /* =========================================================
      TABLET
