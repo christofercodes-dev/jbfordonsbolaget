@@ -94,10 +94,6 @@ export default function InfoCards() {
             <span className={styles.trustLabel}>
               TRYGGT ATT GÖRA AFFÄR MED OSS
             </span>
-
-            <span className={styles.trustDescription}>
-              Seriös bilförmedling med verifierad företagsinformation.
-            </span>
           </div>
 
           <a
